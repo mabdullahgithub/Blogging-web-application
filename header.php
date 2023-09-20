@@ -56,10 +56,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./assets/vendors/animate.css/animate.min.css">
+    <link rel="stylesheet" href="./assets/vendors/slick-carousel/slick.css">
+    <link rel="stylesheet" href="./assets/vendors/slick-carousel/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/vendors/jquery/jquery.min.js"></script>
+    <script src="assets/js/loader.js"></script>
     
     <style>
     .navbar-brand img {
-      height: 50px; /* Adjust the height of the logo as needed */
+      height: 50px; 
     }
     .image{
         background-size: 100% 100%;
@@ -123,55 +129,58 @@
 include "config.php";
 ?>
 <body>
-    <!-- Header -->
-    <header class="bg-secondary py-3">
-        <div class="container">
-            <?php 
+<header class="oleez-header">
+<?php 
             include "config.php";
-                $sql = "SELECT * FROM category  WHERE post > 0";
-                $result = mysqli_query($conn , $sql);
-                if(mysqli_num_rows($result)){
-                  
-                  // fetch logo
-
                   $logo_sql = "SELECT logo FROM setting";
                   $logo_result = mysqli_query($conn, $logo_sql);
                   $logo_row = mysqli_fetch_assoc($logo_result);
                 
-            ?>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div>
-      <a class="navbar-brand ms-4" href="#"><img src="admin\images\<?php echo $logo_row['logo'] ?>" alt="Logo"></a>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        
-      <li class="nav-item cate mx-2">
-          <a onmouseover="this.style.color='yellow';" onmouseout="this.style.color='yellow';" class="nav-link " href="<?php echo $hostname ?>">Home</a>
-        </li>
-        <?php 
-            // $cid = $_GET['cid'];
-            while($row = mysqli_fetch_assoc($result)){
-        ?>
-        <li class="nav-item cate mx-2">
-          <a onmouseover="this.style.color='yellow';"
-            onmouseout="this.style.color='grey';"
-           class="nav-link" href='category.php?cid=<?php echo $row['category_id'] ?>'>
-          <?php echo $row['category_name'] ?></a></li>
-        <?php } ?>
-        <li class=" mx-3 nav-item">
-          <a style="color: red;" class="nav-link " href="login.php">Login</a>
-        </li>
-      </ul>
-    </div>
-</nav>
-<?php 
-}
 ?>
-</div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html"><img src="admin\images\<?php echo $logo_row['logo'] ?>" alt="Logo"></a>
+            <ul class="nav nav-actions d-lg-none ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#!" data-toggle="searchModal">
+                        <img src="assets/images/search.svg" alt="search">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!" data-toggle="offCanvasMenu">
+                        <img src="assets/images/social icon@2x.svg" alt="social-nav-toggle">
+                    </a>
+                </li>
+            </ul>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#oleezMainNav"
+                aria-controls="oleezMainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="oleezMainNav">
+                <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.php">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.php">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-none d-lg-flex">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-btn" href="#!" data-toggle="searchModal">
+                            <img src="assets/images/search.svg" alt="search">
+                        </a>
+                    </li>
+                    <li>
+                        <a style="color: red;" class="nav-link " href="login.php">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- Header -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
