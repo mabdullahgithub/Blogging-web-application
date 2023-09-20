@@ -1,11 +1,10 @@
 <?php include 'header.php'; ?>
-<div id="main-content">
-        <div class="container p-4 mt-2">
+<main class="blog-standard">
+        <div class="container">
+            <h1 class="oleez-page-title wow fadeInUp">Blog Standard</h1>
             <div class="row">
-                <div class="col-md-8 posts">
-                <div class="post-container">
-                  <!-- post-container -->
-                  <?php 
+            <div class="col-md-8">
+            <?php 
                     include "config.php";
                     $post_id = $_GET['id'];
                     $sql = "SELECT post.post_id, post.title , post.description, post.date, category.category_name,
@@ -18,9 +17,8 @@
                         if(mysqli_num_rows($result)){
                             while($row = mysqli_fetch_assoc($result)){
                 ?>
-                        <div class="post-content single-post">
-                        <h4 style="color: #1B6B93;"><?php echo $row['title']; ?></h4>
-                        <div class="post-information">
+                        <article class="blog-post wow fadeInUp">
+                            <img src="admin/image/<?php echo $row['image']; ?>" alt="blog post" class="post-thumbnail">
                             <span>
                                 <i style="color: #1B6B93;" class="fa fa-tags" aria-hidden="true"></i>
                                 <a style="color: grey; text-decoration:none;" href="category.php?cid=<?php echo $row['category']; ?>" > <?php echo $row['category_name']; ?></a>
@@ -33,23 +31,44 @@
                                 <i style="color: #1B6B93;" class="fa fa-calendar" aria-hidden="true"></i>
                                 <?php echo $row['date']; ?>
                             </span>
-                        </div>
-                            <img height="300px" width="auto" class="my-3 single-feature-image" src="admin/image/<?php echo $row['image'] ?>" alt=""/>
-                            <p class="description">
-                            <?php  echo $row['description'] ?><br>
-                            </p>
-                        </div>
-                        <?php 
-                            }
-                        }else{
-                            echo "no record found";
+                            <h4 class="post-title"><?php echo $row['title']; ?></h4>
+                            <p class="post-excerpt"><?php  echo $row['description'] ?><br></p>
+                        </article>
+
+<!-- pagination -->
+                        <nav class="oleez-pagination wow fadeInUp">
+<?php 
                         }
-                        ?>
+                    }else{
+                        echo "<h2>No Record Found.</h2>";
+                      }
+?>
+</nav>
+                        
                     </div>
-                    <!-- /post-container -->
+                    <?php include 'sidebar.php'; ?>
                 </div>
-                <?php include 'sidebar.php'; ?>
             </div>
         </div>
+    </main>
+    <?php include 'footer.php'; ?>
+
+    <!-- Modals -->
+    <!-- Full screen search box -->
+    <div id="searchModal" class="search-modal">
+        <button type="button" class="close" aria-label="Close" data-dismiss="searchModal">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <form action="index.html" method="get" class="oleez-overlay-search-form">
+            <label for="search" class="sr-only">Search</label>
+            <input type="search" class="oleez-overlay-search-input" id="search" name="search" placeholder="Add words and hit enter to search">
+        </form>
     </div>
-<?php include 'footer.php'; ?>
+    <script src="assets/vendors/popper.js/popper.min.js"></script>
+    <script src="assets/vendors/wowjs/wow.min.js"></script>
+    <script src="assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/fancybox/jquery.fancybox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        new WOW().init();
+    </script>

@@ -14,7 +14,7 @@ if(empty($_FILES['new-image']['name'])){
     $explode = explode('.',$file_name);
     $file_ext = end($explode);
   
-    $extensions = array("jpeg","jpg","png");
+    $extensions = array("jpeg","jpg","png","svg","gif");
   
     if(in_array($file_ext,$extensions) === false)
     {
