@@ -19,7 +19,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #f7b500;
+  --primary: #FF914D;
   --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
@@ -1795,8 +1795,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #212529;
-  background-color: #f7b500;
-  border-color: #f7b500; }
+  background-color: #FF914D;
+  border-color: #FF914D; }
   .btn-primary:hover {
     color: #212529;
     background-color: #d19900;
@@ -1808,8 +1808,8 @@ fieldset:disabled a.btn {
     box-shadow: 0 0 0 0.2rem rgba(215, 159, 6, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #212529;
-    background-color: #f7b500;
-    border-color: #f7b500; }
+    background-color: #FF914D;
+    border-color: #FF914D; }
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
     color: #fff;
@@ -2002,22 +2002,22 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5); }
 
 .btn-outline-primary {
-  color: #f7b500;
-  border-color: #f7b500; }
+  color: #FF914D;
+  border-color: #FF914D; }
   .btn-outline-primary:hover {
     color: #212529;
-    background-color: #f7b500;
-    border-color: #f7b500; }
+    background-color: #FF914D;
+    border-color: #FF914D; }
   .btn-outline-primary:focus, .btn-outline-primary.focus {
     box-shadow: 0 0 0 0.2rem rgba(247, 181, 0, 0.5); }
   .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-    color: #f7b500;
+    color: #FF914D;
     background-color: transparent; }
   .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
   .show > .btn-outline-primary.dropdown-toggle {
     color: #212529;
-    background-color: #f7b500;
-    border-color: #f7b500; }
+    background-color: #FF914D;
+    border-color: #FF914D; }
     .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-primary.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(247, 181, 0, 0.5); }
@@ -3561,7 +3561,7 @@ input[type="button"].btn-block {
 
 .badge-primary {
   color: #212529;
-  background-color: #f7b500; }
+  background-color: #FF914D; }
   a.badge-primary:hover, a.badge-primary:focus {
     color: #212529;
     background-color: #c49000; }
@@ -4669,7 +4669,7 @@ a.close.disabled {
   vertical-align: text-top !important; }
 
 .bg-primary {
-  background-color: #f7b500 !important; }
+  background-color: #FF914D !important; }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
@@ -4769,7 +4769,7 @@ button.bg-dark:focus {
   border-left: 0 !important; }
 
 .border-primary {
-  border-color: #f7b500 !important; }
+  border-color: #FF914D !important; }
 
 .border-secondary {
   border-color: #6c757d !important; }
@@ -7010,7 +7010,7 @@ button.bg-dark:focus {
   color: #ffffff !important; }
 
 .text-primary {
-  color: #f7b500 !important; }
+  color: #FF914D !important; }
 
 a.text-primary:hover, a.text-primary:focus {
   color: #ab7d00 !important; }
@@ -7260,7 +7260,7 @@ a.text-dark:hover, a.text-dark:focus {
       top: 50%;
       left: 1rem;
       transform: translateY(-50%);
-      background-color: #f7b500;
+      background-color: #FF914D;
       transition: width 0.3s ease-in; }
     .oleez-header .dropdown-menu .dropdown-item:hover {
       background-color: transparent; }
@@ -7301,7 +7301,7 @@ a.text-dark:hover, a.text-dark:focus {
     .off-canvas-menu .oleez-social-menu li {
       padding-left: 0; }
     .off-canvas-menu .oleez-social-menu .oleez-social-menu-link {
-      color: #f7b500;
+      color: #FF914D;
       font-size: 25px;
       line-height: 1;
       font-weight: 700;
@@ -7356,20 +7356,20 @@ a.text-dark:hover, a.text-dark:focus {
     background-repeat: no-repeat;
     background-position: left top;
     background-size: 20px;
-    color: #f7b500;
+    color: #FF914D;
     font-size: 18px;
     line-height: 1.39;
     font-weight: 500; }
     .search-modal .oleez-overlay-search-input::-webkit-input-placeholder {
-      color: #f7b500; }
+      color: #FF914D; }
     .search-modal .oleez-overlay-search-input::-moz-placeholder {
-      color: #f7b500; }
+      color: #FF914D; }
     .search-modal .oleez-overlay-search-input:-ms-input-placeholder {
-      color: #f7b500; }
+      color: #FF914D; }
     .search-modal .oleez-overlay-search-input::-ms-input-placeholder {
-      color: #f7b500; }
+      color: #FF914D; }
     .search-modal .oleez-overlay-search-input::placeholder {
-      color: #f7b500; }
+      color: #FF914D; }
     .search-modal .oleez-overlay-search-input:focus {
       outline: none; }
 
@@ -7400,7 +7400,7 @@ a.text-dark:hover, a.text-dark:focus {
         font-weight: 500;
         line-height: 1.5;
         margin-bottom: 6px;
-        color: #f7b500; }
+        color: #FF914D; }
       .oleez-footer .footer-content .footer-widget-text .widget-content {
         font-size: 14px;
         line-height: 1.29; }
@@ -7453,7 +7453,7 @@ a.text-dark:hover, a.text-dark:focus {
         .oleez-landing-carousel .carousel-item .carousel-caption h2 {
           font-size: 35px; } }
       .oleez-landing-carousel .carousel-item .carousel-caption h2 span {
-        background-color: #f7b500;
+        background-color: #FF914D;
         display: inline-block;
         padding: 10px 30px; }
       .oleez-landing-carousel .carousel-item .carousel-caption h2:first-child {
@@ -7508,7 +7508,7 @@ a.text-dark:hover, a.text-dark:focus {
       padding-top: 11px; }
       .oleez-landing-section .oleez-landing-section-content .oleez-landing-section-verticals .number {
         font-size: 20px;
-        color: #f7b500;
+        color: #FF914D;
         line-height: 1;
         display: inline-block;
         margin-right: 13px; }
@@ -7729,7 +7729,7 @@ a.text-dark:hover, a.text-dark:focus {
     line-height: 2.08;
     margin-bottom: 4px; }
     .news-card .post-meta .post-category {
-      color: #f7b500; }
+      color: #FF914D; }
   .news-card .post-title {
     font-size: 17px;
     font-weight: 500;
@@ -8150,7 +8150,7 @@ a.text-dark:hover, a.text-dark:focus {
     content: "\201c";
     font-family: monospace;
     font-size: 75px;
-    color: #f7b500;
+    color: #FF914D;
     position: absolute;
     left: 30px;
     top: 15px;
@@ -8379,7 +8379,7 @@ a.text-dark:hover, a.text-dark:focus {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: #f7b500;
+    background-color: #FF914D;
     transition: all 0.2s ease; }
   .oleez-pagination a.active, .oleez-pagination a:hover {
     text-decoration: none; }

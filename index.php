@@ -44,7 +44,7 @@
                         </article>
 
 <!-- pagination -->
-                        <nav class="oleez-pagination wow fadeInUp">
+
 <?php 
                         }
                     }else{
@@ -75,7 +75,6 @@
         echo '</ul>';
 
 ?>
-</nav>
                         
                     </div>
                     <?php include 'sidebar.php'; ?>

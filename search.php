@@ -53,7 +53,6 @@
                         </article>
 
 <!-- pagination -->
-                        <nav class="oleez-pagination wow fadeInUp">
             <?php
                       }
                     }else{
@@ -89,7 +88,6 @@
                   echo "<h2>No Record Found.</h2>";
                 }
         ?>
-</nav>
                         
                     </div>
                     <?php include 'sidebar.php'; ?>
