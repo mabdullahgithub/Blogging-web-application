@@ -65,7 +65,11 @@
     
     <style>
     .navbar-brand img {
-      height: 50px; 
+      height: 150px; 
+      /* margin-top: -50px; */
+    }
+    .navoo{
+      margin-top: -40px;
     }
     .image{
         background-size: 100% 100%;
@@ -87,7 +91,7 @@ include "config.php";
                   $logo_row = mysqli_fetch_assoc($logo_result);
                 
 ?>
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navoo navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="index.html"><img src="admin\images\<?php echo $logo_row['logo'] ?>" alt="Logo"></a>
             <ul class="nav nav-actions d-lg-none ml-auto">
                 <li class="nav-item">

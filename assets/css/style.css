@@ -7380,8 +7380,8 @@ a.text-dark:hover, a.text-dark:focus {
     padding-top: 90px;
     padding-bottom: 45px; }
     .oleez-footer .footer-content .footer-logo {
-      height: 30px;
-      margin-bottom: 19px; }
+      /* height: 150px; */
+      margin-bottom: 9px; }
     .oleez-footer .footer-content .footer-intro-text {
       font-size: 18px;
       line-height: 1.5;

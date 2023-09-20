@@ -5,9 +5,9 @@
 -<p>step 3: import the database file in your database which is located in the folder named "database for import"</p>
 -<p>Remeber that clone this repo to your htdocs folder in xamp or wamp and repo name should be "first-CMS"</p>
  
- ## admin Login credentials
- ```username = abdullah
- ```password = zxcvbnm
+ <h4>admin Login credentials</h4>
+ <p>username = abdullah</p>
+ <p>password = zxcvbnm</p>
 
- ## user Login credentials
- ```you can create your own account to post blogs
+<h4>user Login credentials</h4>
+<p>you can create your own account to post blogs</p>
