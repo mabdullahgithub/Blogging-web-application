@@ -72,56 +72,6 @@
         width: 100%;
         height: 150px;
     }
-    .posts{
-    background: #fff;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    }
-    body{
-        background: ghostwhite;
-        font-family: sans-serif,arial,Helvetica;
-    }
-    #main-content .post-content{
-        font-size: 14px;
-    }
-    #main-content .post-content .post-information span{
-        font-size: 12px;
-        color: grey;
-    }
-    #main-content .post-content a.read-more{
-    color: #fff;
-    text-decoration: none;
-    background-color: grey;
-    font-size: 12px;
-    text-transform: capitalize;
-    padding: 3px 8px;
-    border-radius: 2px;
-    transition: all 0.3s;
-    float: right;
-}
-#footer{
-    color: #fff;
-    padding:15px 0;
-    text-align:center;
-    background-color: #6C757D;
-    bottom: 0;
-}
-#footer #content{
-  font-size: 13px;
-}
-#footer  a{
-    color:#fff;
-}
-
-#footer  span  a:hover{
-    text-decoration: underline;
-}
-#main-content .post-content a.read-more:hover{
-    color: #fff;
-    background-color: #333;
-}
 /* */
   </style>
 </head>
