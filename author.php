@@ -42,7 +42,7 @@
                             <img src="admin/image/<?php echo $row['image']; ?>" alt="blog post" class="post-thumbnail">
                             <span>
                                 <i style="color: #1B6B93;" class="fa fa-tags" aria-hidden="true"></i>
-                                <?php echo $row['category_name']; ?>
+                                <a style="color: grey; text-decoration:none;" href="category.php?cid=<?php echo $row['category']; ?>" > <?php echo $row['category_name']; ?></a>
                             </span>
                             <span>
                                 <i style="color: #1B6B93;" class="fa fa-user" aria-hidden="true"></i>
@@ -59,21 +59,22 @@
 
 <!-- pagination -->
                         <nav class="oleez-pagination wow fadeInUp">
-<?php 
+                        <?php 
                         }
                     }else{
                         echo "<h2>No Record Found.</h2>";
                       }
-        $sql1 = "SELECT * FROM post";
+
+        $sql1 = "SELECT * FROM post JOIN user ON post.author = user.user_id WHERE post.author = {$a_id}";
         $result1 = mysqli_query($conn, $sql1) or die("Query Failed!");
 
         $total_records = mysqli_num_rows($result1);
-        $limit = 4  ;
+        $limit = 5  ;
         $total_page = ceil($total_records/$limit);
 
         echo '<ul class="pagination justify-content-center">';
         if($page > 1){
-            echo '<li class="page-item"><a class="page-link" href="index.php?page='.($page - 1).'">P</a></li>';
+            echo '<li class="page-item"><a class="page-link" href="author.php?aid='.$a_id.'&page='.($page - 1).'">Prev</a></li>';
           }
         for($i=1; $i<=$total_page; $i++){
             if($i==$page){
@@ -81,14 +82,15 @@
             }else{
                 $active = "";
             }
-            echo '<li class="page-item '.$active.'"><a class="page-link" href="index.php?page='.$i.'">'.$i.'</a></li>';
+            echo '<li class="page-item '.$active.'"><a class="page-link" href="author.php?aid='.$a_id.'&page='.$i.'">'.$i.'</a></li>';
         }
         if($total_page > $page){
-            echo '<li class="page-item"><a class="page-link" href="index.php?page='.($page + 1).'">N</a></li>';
+            echo '<li class="page-item"><a class="page-link" href="author.php?aid='.$a_id.'&page='.($page + 1).'">Next</a></li>';
           }
         echo '</ul>';
 
-?>
+                      ?>
+
 </nav>
                         
                     </div>
