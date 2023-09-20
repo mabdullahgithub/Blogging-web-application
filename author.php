@@ -1,10 +1,7 @@
 <?php include 'header.php'; ?>
-<div id="main-content">
-    <div class="container my-4">
-        <div class="row">
-            <div class="col-md-7 mx-4 posts">
-                <div class="post-container">
-                <?php
+<main class="blog-standard">
+        <div class="container">
+        <?php
                   include "config.php";
                   if(isset($_GET['aid'])){
                     $a_id = $_GET['aid'];
@@ -13,10 +10,12 @@
                     $result2 = mysqli_query($conn, $sql2) or die("Query Failed.");
                     $row1 = mysqli_fetch_assoc($result2);
 
-                  ?>
-                  <h4 style=" text-transform: uppercase; font-weight: bold;" class="page-heading">news by - <?php echo $row1['username']; ?></h4>
-                  <div class="mb-3" style="background-color: black; height: 2px; width:100%;"></div>
-                <?php 
+        ?>
+
+            <h1 class="oleez-page-title wow fadeInUp">Blog by - <?php echo $row1['username']; ?></h1>
+            <div class="row">
+            <div class="col-md-8">
+            <?php 
                   }
                     include "config.php";
 
@@ -39,54 +38,42 @@
                         if(mysqli_num_rows($result)){
                             while($row = mysqli_fetch_assoc($result)){
                 ?>
-                    <div class="post-content">
-                        <div class="row">
-                                <div class="col-md-4">
-                                  <a class="post-img" href="single.php?id=<?php echo $row['post_id']; ?>">
-                                  <img class="image";   src="admin/image/<?php echo $row['image']; ?>" alt="image"/></a>
-                                </div>
-                                <div class="col-md-8">
-                                  <div class="inner-content clearfix">
-                                      <h4 style="color: #1B6B93;"><?php echo $row['title']; ?></h4>
-                                      <div class="post-information">
-                                          <span>
-                                              <i style="color: #1B6B93;" class="fa fa-tags" aria-hidden="true"></i>
-                                              <?php echo $row['category_name']; ?>
-                                          </span>
-                                          <span>
-                                              <i style="color: #1B6B93;" class="fa fa-user" aria-hidden="true"></i>
-                                              <?php echo $row['username']; ?>
-                                          </span>
-                                          <span>
-                                              <i style="color: #1B6B93;" class="fa fa-calendar" aria-hidden="true"></i>
-                                              <?php echo $row['date']; ?>
-                                          </span>
-                                      </div>
-                                      <p class="description">
-                                      <?php  echo substr($row['description'],0,160) . "..."; ?><br>
-                                      </p>
-                                      <a class='read-more pull-right' href="single.php?id=<?php echo $row['post_id']; ?>">read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="my-4" style="background-color: #1B6B93; height: 1px; width:100%; opacity:50%;"></div>
-                    <?php 
+                        <article class="blog-post wow fadeInUp">
+                            <img src="admin/image/<?php echo $row['image']; ?>" alt="blog post" class="post-thumbnail">
+                            <span>
+                                <i style="color: #1B6B93;" class="fa fa-tags" aria-hidden="true"></i>
+                                <?php echo $row['category_name']; ?>
+                            </span>
+                            <span>
+                                <i style="color: #1B6B93;" class="fa fa-user" aria-hidden="true"></i>
+                                <?php echo $row['username']; ?>
+                            </span>
+                            <span>
+                                <i style="color: #1B6B93;" class="fa fa-calendar" aria-hidden="true"></i>
+                                <?php echo $row['date']; ?>
+                            </span>
+                            <h4 class="post-title"><?php echo $row['title']; ?></h4>
+                            <p class="post-excerpt"><?php  echo substr($row['description'],0,100) . "..."; ?></p>
+                            <a href="single.php?id=<?php echo $row['post_id']; ?>" class="post-permalink">READ MORE</a>
+                        </article>
+
+<!-- pagination -->
+                        <nav class="oleez-pagination wow fadeInUp">
+<?php 
                         }
                     }else{
                         echo "<h2>No Record Found.</h2>";
                       }
-
-        $sql1 = "SELECT * FROM post JOIN user ON post.author = user.user_id WHERE post.author = {$a_id}";
+        $sql1 = "SELECT * FROM post";
         $result1 = mysqli_query($conn, $sql1) or die("Query Failed!");
 
         $total_records = mysqli_num_rows($result1);
-        $limit = 5  ;
+        $limit = 4  ;
         $total_page = ceil($total_records/$limit);
 
         echo '<ul class="pagination justify-content-center">';
         if($page > 1){
-            echo '<li class="page-item"><a class="page-link" href="author.php?aid='.$a_id.'&page='.($page - 1).'">Prev</a></li>';
+            echo '<li class="page-item"><a class="page-link" href="index.php?page='.($page - 1).'">P</a></li>';
           }
         for($i=1; $i<=$total_page; $i++){
             if($i==$page){
@@ -94,19 +81,40 @@
             }else{
                 $active = "";
             }
-            echo '<li class="page-item '.$active.'"><a class="page-link" href="author.php?aid='.$a_id.'&page='.$i.'">'.$i.'</a></li>';
+            echo '<li class="page-item '.$active.'"><a class="page-link" href="index.php?page='.$i.'">'.$i.'</a></li>';
         }
         if($total_page > $page){
-            echo '<li class="page-item"><a class="page-link" href="author.php?aid='.$a_id.'&page='.($page + 1).'">Next</a></li>';
+            echo '<li class="page-item"><a class="page-link" href="index.php?page='.($page + 1).'">N</a></li>';
           }
         echo '</ul>';
 
-                      ?>
-
+?>
+</nav>
+                        
+                    </div>
+                    <?php include 'sidebar.php'; ?>
                 </div>
             </div>
-            <?php include 'sidebar.php'; ?>
         </div>
+    </main>
+    <?php include 'footer.php'; ?>
+
+    <!-- Modals -->
+    <!-- Full screen search box -->
+    <div id="searchModal" class="search-modal">
+        <button type="button" class="close" aria-label="Close" data-dismiss="searchModal">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <form action="index.html" method="get" class="oleez-overlay-search-form">
+            <label for="search" class="sr-only">Search</label>
+            <input type="search" class="oleez-overlay-search-input" id="search" name="search" placeholder="Add words and hit enter to search">
+        </form>
     </div>
-</div>
-<?php include 'footer.php'; ?>
+    <script src="assets/vendors/popper.js/popper.min.js"></script>
+    <script src="assets/vendors/wowjs/wow.min.js"></script>
+    <script src="assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/vendors/fancybox/jquery.fancybox.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        new WOW().init();
+    </script>
