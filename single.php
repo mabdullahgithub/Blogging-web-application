@@ -1,10 +1,7 @@
 <?php include 'header.php'; ?>
 <main class="blog-standard">
         <div class="container">
-            <h1 class="oleez-page-title wow fadeInUp">Blog Standard</h1>
-            <div class="row">
-            <div class="col-md-8">
-            <?php 
+        <?php 
                     include "config.php";
                     $post_id = $_GET['id'];
                     $sql = "SELECT post.post_id, post.title , post.description, post.date, category.category_name,
@@ -17,6 +14,9 @@
                         if(mysqli_num_rows($result)){
                             while($row = mysqli_fetch_assoc($result)){
                 ?>
+            <h1 class="oleez-page-title wow fadeInUp"><?php echo $row['title']; ?></h1>
+            <div class="row">
+            <div class="col-md-8">
                         <article class="blog-post wow fadeInUp">
                             <img src="admin/image/<?php echo $row['image']; ?>" alt="blog post" class="post-thumbnail">
                             <span>
