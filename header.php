@@ -63,6 +63,13 @@
     <script src="assets/vendors/jquery/jquery.min.js"></script>
     <script src="assets/js/loader.js"></script>
     
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900" rel="stylesheet">
+		<link rel="stylesheet" href="./assets/carousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/carousel/css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+		<link rel="stylesheet" href="./assets/carousel/css/animate.css">
+		<link rel="stylesheet" href="./assets/carousel/css/style.css">
+    
     <style>
     .navbar-brand img {
       height: 150px; 
