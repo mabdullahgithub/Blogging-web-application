@@ -52,7 +52,7 @@
 
 
 <main class="blog-standard">
-        <div class="container">
+        <div class="container"> 
             <h1 class="oleez-page-title wow fadeInUp">Blog Standard</h1>
             <div class="row">
             <div class="col-md-8">
