@@ -1,7 +1,13 @@
 
 
 <?php 
-    include "header.php";?>
+    include "header.php";
+    include "config.php";
+
+if($_SESSION["role"] == '0'){
+  header("Location: {$hostname}/admin/post.php");
+}
+?>
 <body>
   <div class="container mt-3">
     <h2 class="text-center mb-2">All Users</h2>
@@ -10,11 +16,6 @@
     </div>
     
     <?php 
-    include "config.php";
-
-    if($_SESSION["role"] == '0'){
-      header("Location: {$hostname}/admin/post.php");
-    }
 
     $limit = 5;
     if(isset($_GET['page'])){

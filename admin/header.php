@@ -166,6 +166,9 @@ if(!isset($_SESSION['username'])){
         
           <ul class="navbar-nav navee">
             <li class="nav-item">
+              <a style="color: red;" class=" nav-link" href="../index.php"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="post.php">Post</a>
             </li>
             

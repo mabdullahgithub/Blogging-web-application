@@ -9,38 +9,53 @@
 							<div class="featured-carousel owl-carousel">
 								<div class="item">
 									<div class="work">
-										<div class="img d-flex align-items-center justify-content-center" style="background-image: url(./assets/carousel/images/slider-1.jpg);">
-											<div class="text text-center">
-												<h2>Discover New Places</h2>
+                                        <div class="img d-flex align-items-center" style="background-image: url(./assets/carousel/images/child-817373.jpg);">
+                                            <div class="text col-md-6">
+                                                <h3 style="color: whitesmoke;">Have a story to tell?<br> Share Your Inspiring Life Story with iPRIMETIMES!</h3>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="item">
 									<div class="work">
-										<div class="img d-flex align-items-center justify-content-center" style="background-image: url(./assets/carousel/images/slider-2.jpg);">
-											<div class="text text-center">
-												<h2>Dream Destination</h2>
+										<div class="img d-flex align-items-center" style="background-image: url(./assets/carousel/images/nature-3046562.jpg);">
+											<div class="text  col-md-6">
+												<h3 style="color: whitesmoke;">Make a Difference:<br> Share Your Social Impact Initiatives with iPRIMETIMES!</h3>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="item">
 									<div class="work">
-										<div class="img d-flex align-items-center justify-content-center" style="background-image: url(./assets/carousel/images/slider-3.jpg);">
-											<div class="text text-center">
-												<h2>Travel Exploration</h2>
+										<div class="img d-flex align-items-center" style="background-image: url(./assets/carousel/images/mother.jpg);">
+                                        <div class="text  col-md-6">
+												<h3 style="color: whitesmoke;">The Art of Relaxation:<br> Spa Days, Massages, and Self-Care</h3>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-
+                    <?php
+                        if(!isset($_SESSION['username'])){
+                    ?>                
+                            <div class="create-post">
+                                <a href="login.php" class="btn btn-primary btn-lg">Create Your Own Post</a>
+                            </div>
+                    <?php
+                        }
+                        else{
+                    ?>                
+                            <div class="create-post">
+                                <a href="admin/post.php" class="btn btn-primary btn-lg">Add more Posts</a>
+                            </div>
+                    <?php
+                        }
+                    ?>
 							<div class="my-5 text-center">
 			          <ul class="thumbnail">
-			            <li class="active img"><a href="#"><img src="./assets/carousel/images/thumb-1.jpg" alt="Image" class="img-fluid"></a></li>
-			            <li><a href="#"><img src="./assets/carousel/images/thumb-2.jpg" alt="Image" class="img-fluid"></a></li>
-			            <li><a href="#"><img src="./assets/carousel/images/thumb-3.jpg" alt="Image" class="img-fluid"></a></li>
+			            <li class="active img"><a href="#"><img src="./assets/carousel/images/child-817373.jpg" alt="Image" class="img-fluid"></a></li>
+			            <li><a href="#"><img src="./assets/carousel/images/nature-3046562.jpg" alt="Image" class="img-fluid"></a></li>
+			            <li><a href="#"><img src="./assets/carousel/images/mother.jpg" alt="Image" class="img-fluid"></a></li>
 			          </ul>
 			        </div>
 						</div>

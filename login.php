@@ -50,7 +50,7 @@ if(isset($_POST['login'])){
                 $_SESSION["user_id"] = $row['user_id'];
                 $_SESSION["role"] = $row['role'];
           
-                header("Location: {$hostname}/admin/user.php");
+                header("Location: {$hostname}/admin/post.php");
               
             } else {
                 echo "Invalid password!";
@@ -95,14 +95,14 @@ if(isset($_POST['login'])){
               <button style="width: 100%;" type="submit" name="login" class="btn btn-primary">Login</button>
             </div>
             <!-- Forgot Password Link -->
-            <div class="mt-3 text-center text-muted">
+            <!-- <div class="mt-3 text-center text-muted">
               Forgot password? <a href="signup.php">click here</a>
-            </div>
+            </div> -->
             <!-- <div class="text-center text-muted">
               or
             </div> -->
             <!-- Signup Link -->
-            <div class="mt-1 text-center text-muted">
+            <div class="mt-3 text-center text-muted">
               Don't have an account? Let's join! <a href="signup.php">Signup here</a>
             </div>
             

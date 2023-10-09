@@ -32,7 +32,7 @@
                                 <?php echo $row['date']; ?>
                             </span>
                             <h4 class="post-title"><?php echo $row['title']; ?></h4>
-                            <p class="post-excerpt"><?php  echo $row['description'] ?><br></p>
+                            <p class="post-excerpt"><?php  echo nl2br($row['description']) ?><br></p>
                         </article>
 
 <!-- pagination -->
